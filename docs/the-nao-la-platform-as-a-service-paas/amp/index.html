@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <title>Thế nào là Platform-as-a-Service (PaaS)</title>
+
+    <link rel="icon" href="../../favicon.png" type="image/png" />
+    <link rel="canonical" href="../index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Onion Planet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Thế nào là Platform-as-a-Service (PaaS)" />
+    <meta property="og:description" content="Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt." />
+    <meta property="og:url" content="http://localhost:2368/the-nao-la-platform-as-a-service-paas/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta property="article:published_time" content="2019-10-20T14:47:00.000Z" />
+    <meta property="article:modified_time" content="2021-07-31T08:28:30.000Z" />
+    <meta property="article:tag" content="Thiết kế" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/minhducdoo" />
+    <meta property="article:author" content="https://www.facebook.com/minhducdoo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thế nào là Platform-as-a-Service (PaaS)" />
+    <meta name="twitter:description" content="Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt." />
+    <meta name="twitter:url" content="http://localhost:2368/the-nao-la-platform-as-a-service-paas/" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Minh-Duc" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Thiết kế" />
+    <meta name="twitter:site" content="@minhducdoo" />
+    <meta name="twitter:creator" content="@minhducdoo" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Onion Planet",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/07/ONION-PLANET-2.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Minh-Duc",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/b1708cec5e585d39f3b31bcb6ebd1faa?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "http://localhost:2368/author/duc/",
+        "sameAs": [
+            "https://www.facebook.com/minhducdoo",
+            "https://twitter.com/minhducdoo"
+        ]
+    },
+    "headline": "Thế nào là Platform-as-a-Service (PaaS)",
+    "url": "http://localhost:2368/the-nao-la-platform-as-a-service-paas/",
+    "datePublished": "2019-10-20T14:47:00.000Z",
+    "dateModified": "2021-07-31T08:28:30.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&ixlib=rb-1.2.1&q=80&w=2000",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "Thiết kế",
+    "description": "Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.8" />
+    <link rel="alternate" type="application/rss+xml" title="Onion Planet" href="../../rss/index.html" />
+
+    <style amp-custom>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        font-size: 62.5%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: #3a4145;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+        font-size: 1.7rem;
+        line-height: 1.55em;
+        font-weight: 400;
+        font-style: normal;
+        background: #fff;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    p,
+    ul,
+    ol,
+    li,
+    dl,
+    dd,
+    hr,
+    pre,
+    form,
+    table,
+    video,
+    figure,
+    figcaption,
+    blockquote {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul[class],
+    ol[class] {
+        padding: 0;
+        list-style: none;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+        font: inherit;
+        -webkit-appearance: none;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    label {
+        display: block;
+        font-size: 0.9em;
+        font-weight: 700;
+    }
+
+    hr {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid currentcolor;
+        opacity: 0.1;
+    }
+
+    ::selection {
+        text-shadow: none;
+        background: #cbeafb;
+    }
+
+    mark {
+        background-color: #fdffb6;
+    }
+
+    small {
+        font-size: 80%;
+    }
+
+    sub,
+    sup {
+        position: relative;
+        font-size: 75%;
+        line-height: 0;
+        vertical-align: baseline;
+    }
+    sup {
+        top: -0.5em;
+    }
+    sub {
+        bottom: -0.25em;
+    }
+
+    ul li + li {
+        margin-top: 0.6em;
+    }
+
+    a {
+        color: var(--ghost-accent-color, #1292EE);
+        text-decoration-skip-ink: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-weight: 700;
+        color: #121212;
+        line-height: 1.4em;
+    }
+
+    h1 {
+        font-size: 3.4rem;
+        line-height: 1.1em;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        line-height: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.7rem;
+    }
+
+    h5 {
+        font-size: 1.6rem;
+    }
+
+    h6 {
+        font-size: 1.6rem;
+    }
+
+    amp-img {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    amp-img img {
+        object-fit: cover;
+    }
+
+    .page-header {
+        padding: 50px 5vmin 30px;
+        text-align: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .page-header a {
+        color: #121212;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.6rem;
+        letter-spacing: -0.1px;
+    }
+
+    .post {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .post-header {
+        margin: 0 5vmin 5vmin;
+        text-align: center;
+    }
+
+    .post-meta {
+        margin: 1rem 0 0 0;
+        text-transform: uppercase;
+        color: #738a94;
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+
+    .post-image {
+        margin: 0 0 5vmin;
+    }
+
+    .post-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .post-content {
+        padding: 0 5vmin;
+    }
+
+    .post-content > * + * {
+        margin-top: 1.5em;
+    }
+
+    .post-content [id]:not(:first-child) {
+        margin: 2em 0 0;
+    }
+
+    .post-content > [id] + * {
+        margin-top: 1rem;
+    }
+
+    .post-content [id] + .kg-card,
+    .post-content blockquote + .kg-card {
+        margin-top: 40px;
+    }
+
+    .post-content > ul,
+    .post-content > ol,
+    .post-content > dl {
+        padding-left: 1.9em;
+    }
+
+    .post-content hr {
+        margin-top: 40px;
+    }
+
+    .post .post-content hr + * {
+        margin-top: 40px;
+    }
+
+    .post-content amp-img {
+        background-color: #f8f8f8;
+    }
+
+    .post-content blockquote {
+        position: relative;
+        font-style: italic;
+    }
+
+    .post-content blockquote::before {
+        content: "";
+        position: absolute;
+        left: -1.5em;
+        top: 0;
+        bottom: 0;
+        width: 0.3rem;
+        background: var(--ghost-accent-color, #1292EE);
+    }
+
+    .post-content :not(.kg-card):not([id]) + .kg-card {
+        margin-top: 40px;
+    }
+
+    .post-content .kg-card + :not(.kg-card) {
+        margin-top: 40px;
+    }
+
+    .kg-card figcaption {
+        padding: 1.5rem 1.5rem 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 1.4em;
+        opacity: 0.6;
+    }
+
+    .kg-card figcaption strong {
+        color: rgba(0,0,0,0.8);
+    }
+
+    .post-content :not(pre) code {
+        vertical-align: middle;
+        padding: 0.15em 0.4em 0.15em;
+        border: #e1eaef 1px solid;
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 1em;
+        color: #15171a;
+        background: #f0f6f9;
+        border-radius: 0.25em;
+    }
+
+    .post-content > pre {
+        overflow: scroll;
+        padding: 16px 20px;
+        color: #fff;
+        background: #1F2428;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
+    }
+
+    .kg-embed-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .kg-image-card img {
+        margin: auto;
+    }
+
+    .kg-gallery-card + .kg-gallery-card {
+        margin-top: 0.75em;
+    }
+
+    .kg-gallery-container {
+        position: relative;
+    }
+
+    .kg-gallery-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .kg-gallery-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .kg-gallery-row:not(:first-of-type) {
+        margin: 0.75em 0 0 0;
+    }
+
+    .kg-gallery-image:not(:first-of-type) {
+        margin: 0 0 0 0.75em;
+    }
+
+    .kg-bookmark-card,
+    .kg-bookmark-publisher {
+        position: relative;
+    }
+
+    .kg-bookmark-container,
+    .kg-bookmark-container:hover {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        color: currentColor;
+        background: rgba(255,255,255,0.6);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+    }
+
+    .kg-bookmark-content {
+        flex-basis: 0;
+        flex-grow: 999;
+        padding: 20px;
+        order: 1;
+    }
+
+    .kg-bookmark-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.3em;
+    }
+
+    .kg-bookmark-description {
+        display: -webkit-box;
+        max-height: 45px;
+        margin: 0.5em 0 0 0;
+        font-size: 1.4rem;
+        line-height: 1.55em;
+        overflow: hidden;
+        opacity: 0.8;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .kg-bookmark-metadata {
+        margin-top: 20px;
+    }
+
+    .kg-bookmark-metadata {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 1.3em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .kg-bookmark-description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .kg-bookmark-metadata amp-img {
+        width: 18px;
+        height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+        margin-right: 10px;
+    }
+
+    .kg-bookmark-thumbnail {
+        display: flex;
+        flex-basis: 20rem;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+    .kg-bookmark-thumbnail amp-img {
+        max-height: 200px;
+    }
+
+    .kg-bookmark-author {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .kg-bookmark-publisher::before {
+        content: "•";
+        margin: 0 .5em;
+    }
+
+    .kg-width-full.kg-card-hascaption {
+        display: grid;
+        grid-template-columns: inherit;
+    }
+
+    .post-content table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .post-content th {
+        padding: 0.5em 0.8em;
+        text-align: left;
+        font-size: .75em;
+        text-transform: uppercase;
+    }
+
+    .post-content td {
+        padding: 0.4em 0.7em;
+    }
+
+    .post-content tbody tr:nth-child(2n + 1) {
+        background-color: rgba(0,0,0,0.1);
+        padding: 1px;
+    }
+
+    .post-content tbody tr:nth-child(2n + 2) td:last-child {
+        box-shadow:
+            inset 1px 0 rgba(0,0,0,0.1),
+            inset -1px 0 rgba(0,0,0,0.1);
+    }
+
+    .post-content tbody tr:nth-child(2n + 2) td {
+        box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+    }
+
+    .post-content tbody tr:last-child {
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+
+    .page-footer {
+        padding: 60px 5vmin;
+        margin: 60px auto 0;
+        text-align: center;
+        background-color: #f8f8f8;
+    }
+
+    .page-footer h3 {
+        margin: 0.5rem 0 0 0;
+    }
+
+    .page-footer p {
+        max-width: 500px;
+        margin: 1rem auto 1.5rem;
+        font-size: 1.7rem;
+        line-height: 1.5em;
+        color: rgba(0,0,0,0.6)
+    }
+
+    .powered {
+        display: inline-flex;
+        align-items: center;
+        margin: 30px 0 0;
+        padding: 6px 9px 6px 6px;
+        border: rgba(0,0,0,0.1) 1px solid;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.2px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-weight: 500;
+        color: #222;
+        text-decoration: none;
+        background: #fff;
+        border-radius: 6px;
+    }
+
+    .powered svg {
+        height: 16px;
+        width: 16px;
+        margin: 0 6px 0 0;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            font-size: 1.6rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 2.6rem;
+            line-height: 1.15em;
+        }
+        h2 {
+            font-size: 2rem;
+            line-height: 1.2em;
+        }
+        h3 {
+            font-size: 1.7rem;
+        }
+    }
+
+    :root {--ghost-accent-color: #fccf0f;}
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="page-header">
+        <a href="../../index.html">
+                <amp-img class="site-icon" src="http://localhost:2368/content/images/2021/06/daBrucemusic-1.png" width="50" height="50" layout="fixed"></amp-img>
+        </a>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Thế nào là Platform-as-a-Service (PaaS)</h1>
+                <section class="post-meta">
+                    Minh-Duc -
+                    <time class="post-date" datetime="2019-10-20">20 Th10 2019</time>
+                </section>
+            </header>
+            <figure class="post-image">
+                <amp-img src="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" width="600" height="340" layout="responsive"></amp-img>
+            </figure>
+            <section class="post-content">
+
+                <h2 id="v%E1%BB%81-platform-as-a-service-paas">Về Platform-as-a-Service (PaaS)</h2><p>Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. PaaS là 1 trong 3 hình thức của điện toán đám mây. PaaS đơn giản hóa việc phát triển ứng dụng trên nền web; từ góc nhìn của một nhà phát triển phần mềm, tất cả những tác vụ quản lý dữ liệu (back-end) đều diễn ra phía sau bức màn sân khấu. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt.</p><h2 id="ba-m%C3%B4-h%C3%ACnh-d%E1%BB%8Bch-v%E1%BB%A5-c%E1%BB%A7a-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y">Ba mô hình dịch vụ của điện toán đám mây</h2><figure class="kg-card kg-image-card"><amp-img src="https://lh4.googleusercontent.com/TGB7d9UnSwREKk-r3y1OzlzPL5DVgNqQK6f4eo2mpIz-GvM5M1_FQUQKfKrHJ3ZdtVbWBwyhwKZAlnDo06hBy1tlCAjwJ1DRH0sVRy-nJQ_XoSNw0lqP54lMwEObuGVZQl-BCZw" class="kg-image" alt width="1600" height="615" layout="responsive"></amp-img></figure><p>Có 3 mô hình dịch vụ của điện toán đám mây, gồm PaaS, SaaS (Software-as-a-Service) và IaaS (Infrastructure-as-a-Service). IaaS có liên quan đến cơ sở hạ tầng của công nghệ điện toán đám mây - máy chủ, bộ nhớ, … - được quản lý bởi nhà cung cấp dịch vụ đám mây. Trong khi đó SaaS liên quan đến tất cả các ứng dụng chạy trên nền tảng đám mây, dưới sự quản lý của các công ty cung cấp dịch vụ. Nếu người dùng SaaS giống như một người đi thuê nhà, thì người dùng PaaS giống một người đi thuê tất cả các công cụ và thiết bị hạng nặng để nhanh chóng xây một ngôi nhà, và các công cụ đó được bảo trì và sửa chữa liên tục bởi chủ sở hữu.</p><h2 id="so-s%C3%A1nh-paas-v%E1%BB%9Bi-n%E1%BB%81n-t%E1%BA%A3ng-ph%C3%A1t-tri%E1%BB%83n-%C4%91%C6%B0%E1%BB%A3c-l%C6%B0u-tr%E1%BB%AF-n%E1%BB%99i-b%E1%BB%99">So sánh PaaS với nền tảng phát triển được lưu trữ nội bộ</h2><p>PaaS có thể truy cập từ bất cứ nơi nào có internet, tạo điều kiện dễ dàng cho việc xây dựng ứng dụng từ trình duyệt web. Vì môi trường phát triển ứng dụng không lưu trữ cục bộ, nên các nhà phát triển có thể tương tác với ứng dụng từ bất cứ đâu trên thế giới. Điều này cho phép các nhóm phát triển đa quốc gia có thể cùng hợp tác làm việc. Điều này cũng có nghĩa là các nhà phát triển sẽ có ít quyền kiểm soát môi trường thiết kế sản phẩm hơn.</p><h2 id="c%C3%B3-g%C3%AC-trong-paas">Có gì trong PaaS?</h2><p>Các tính năng chính của PaaS thường bao gồm:</p><ul><li>Các công cụ phát triển</li><li>Các phần mềm trung gian</li><li>Hệ điều hành</li><li>Quản lý cơ sở dữ liệu</li><li>Cơ sở hạ tầng</li></ul><p>Các công ty khác nhau có thể cung cấp các dịch vụ khác nhau, nhưng các thành phần trên là những dịch vụ chủ yêu của PaaS.</p><h3 id="c%C3%A1c-c%C3%B4ng-c%E1%BB%A5-ph%C3%A1t-tri%E1%BB%83n">Các công cụ phát triển</h3><p>Các công ty phát triển PaaS sẽ cung cấp các công cụ cần thiết để phát triển phần mềm, bao gồm trình biên soạn mã nguồn, trình kiểm duyệt lỗi, trình biên soạn mã và một vài công cụ thiết yếu khác. Các công cụ này có thể đi kèm với nhau như một bộ khung nền tảng. Các công cụ chuyên biệt thì sẽ tùy thuộc vào từng công ty, nhưng thường thì sẽ bao gồm đầy đủ những thứ cần thiết để xây dựng phần mềm.</p><h3 id="c%C3%A1c-ph%E1%BA%A7n-m%E1%BB%81m-trung-gian">Các phần mềm trung gian</h3><p>Các nền tảng được sử dụng như một loại dịch vụ thì thường sẽ đi kèm với nhiều phần mềm trung gian, với mục đích giúp các nhà phát triển không phải thiết kế lại từ đầu. Phần mềm trung gian là loại phần mềm đứng giữa ứng dụng dành cho người dùng cuối và hệ điều hành của máy móc; ví dụ một phần mềm trung gian sẽ cho phép các phần mềm khác truy cập thông tin từ bàn phím và chuột. Phần mềm trung gian rất cần thiết trong việc phát triển ứng dụng, nhưng người dùng cuối lại không hề tương tác với chúng.</p><h3 id="h%E1%BB%87-%C4%91i%E1%BB%81u-h%C3%A0nh">Hệ điều hành</h3><p>Một công ty phát triển PaaS sẽ cung cấp và duy trì một hệ điều hành mà các nhà phát triển có thể làm việc và chạy ứng dụng của mình trên đó.</p><h3 id="c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u">Cơ sở dữ liệu</h3><p>Các nhà cung cấp PaaS sẽ đóng vai trò quản trị và duy trì cơ sở dữ liệu. Thường thì họ cũng sẽ cung cấp cho các nhà phát triển một hệ thống quản lý cơ sở dữ liệu.</p><h2 id="c%C6%A1-s%E1%BB%9F-h%E1%BA%A1-t%E1%BA%A7ng">Cơ sở hạ tầng</h2><figure class="kg-card kg-image-card"><amp-img src="https://lh4.googleusercontent.com/8g374KaWjz70En5sul0OydKUKCGUglI9Pal1qkuNTFvVwdLRDsT_0AFPWQRsMng1Vs5weVd08Y5ERdVHcOQnLZs3ni54J_cxoL8asp_ioahsHXMbueULpRqZjvSspb9I-W-Rjvk" class="kg-image" alt width="1600" height="1038" layout="responsive"></amp-img></figure><p><br />PaaS là lớp trên của IaaS trong mô hình các dịch vụ điện toán đám mây, và mọi thứ trong IaaS đều nằm trong PaaS. Một nhà cung cấp PaaS vừa có thể quản lý máy chủ, bộ nhớ, và các trung tâm dữ liệu vật lý, hoặc cũng có thể thuê từ các nhà cung cấp IaaS.</p><h2 id="t%E1%BA%A1i-sao-c%C3%A1c-nh%C3%A0-ph%C3%A1t-tri%E1%BB%83n-s%E1%BB%AD-d%E1%BB%A5ng-paas">Tại sao các nhà phát triển sử dụng PaaS?</h2><h3 id="th%E1%BB%9Di-gian-ti%E1%BA%BFp-c%E1%BA%ADn-th%E1%BB%8B-tr%C6%B0%E1%BB%9Dng-nhanh-h%C6%A1n">Thời gian tiếp cận thị trường nhanh hơn</h3><p>PaaS được sử dụng để xây dựng ứng dụng nhanh hơn. Các nhà phát triển không phải lo về việc xây dựng, cấu hình hay tự cung cấp cơ sở hạ tầng cho ứng dụng của mình. Với PaaS, tất cả những gì họ phải làm là viết code và kiểm thử ứng dụng, những việc còn lại để nhà cung cấp PaaS lo.</p><h3 id="m%E1%BB%99t-m%C3%B4i-tr%C6%B0%E1%BB%9Dng-t%E1%BB%AB-%C4%91%E1%BA%A7u-%C4%91%E1%BA%BFn-cu%E1%BB%91i">Một môi trường từ đầu đến cuối</h3><p>PaaS cho phép các nhà phát triển xây dựng, kiểm thử, sửa lỗi, lưu trữ và cập nhật ứng dụng của mình trên cùng một môi trường. Điều này cho phép các nhà phát triển chắc chắn rằng ứng dụng web của mình sẽ hoạt động trơn tru trước khi ra mắt, và nó cũng đơn giản hóa quá trình nâng cấp của ứng dụng.</p><h3 id="gi%C3%A1-c%E1%BA%A3">Giá cả</h3><p>Giá cả của PaaS nếu tính ra sẽ rẻ hơn và hiệu quả hơn so với IaaS trong nhiều trường hợp. Tổng chi phí sẽ được giảm thiểu vì khách hàng dùng PaaS không phải quản lý máy chủ ảo. Thêm nữa, một số nhà cung cấp PaaS có chính sách dùng đến đâu trả đến đó (pay-as-you-go), khi đó công ty chỉ tính tiền cho nguồn lực của máy tính mà ứng dụng đó tiêu hao, và thường thì sẽ tiết kiệm khá nhiều tiền cho nhà phát triển. Tuy nhiên, mỗi công ty có cấu trúc giá khác nhau, và một số nhà cung cấp nền tảng cũng vẫn thu phí cứng hàng tháng.</p><h3 id="v%E1%BA%A5n-%C4%91%E1%BB%81-b%E1%BA%A3n-quy%E1%BB%81n">Vấn đề bản quyền</h3><p>Các nhà cung cấp PaaS sẽ lo toàn bộ phần đăng ký bản quyền cho hệ điều hành, các công cụ phát triển và bất cứ thành phần nào khác trên nền tảng của họ.</p><h2 id="nh%E1%BB%AFng-h%E1%BA%A1n-ch%E1%BA%BF-ti%E1%BB%81m-t%C3%A0ng-khi-s%E1%BB%AD-d%E1%BB%A5ng-paas">Những hạn chế tiềm tàng khi sử dụng PaaS</h2><h3 id="g%E1%BA%AFn-b%C3%B3-v%E1%BB%9Bi-nh%C3%A0-cung-c%E1%BA%A5p">Gắn bó với nhà cung cấp</h3><p>Sẽ rất khó nếu muốn chuyển đổi nhà cung cấp dịch vụ PaaS, vì cả ứng dụng đã được xây dựng và phát triển bằng công cụ của họ và tích hợp với nền tảng của họ. Mỗi nhà cung cấp có những yêu cầu kiến trúc khác nhau, sử dụng ngôn ngữ lập trình khác nhau, cũng như các thư viện, API và hệ điều hành để phát triển ứng dụng khác nhau. Để chuyển đổi nhà cung cấp, các nhà phát triển cần xây dựng lại hoặc thay đổi hướng vận hành của ứng dụng.</p><h3 id="s%E1%BB%B1-ph%E1%BB%A5-thu%E1%BB%99c-v%C3%A0o-nh%C3%A0-cung-c%E1%BA%A5p">Sự phụ thuộc vào nhà cung cấp</h3><p>Công sức và nguồn lực cần thiết để chuyển đổi nhà cung cấp PaaS có thể sẽ gây phụ thuộc ngày càng nhiều hơn. Một thay đổi nhỏ trong quy trình nội bộ của nhà cung cấp hoặc sự thay đổi trong cơ sở hạ tầng cũng có thể gây nên những tác động rất lớn đến hiệu năng của ứng dụng vì nó được xây để đáp ứng với cấu hình cũ. Thêm vào đó, nếu nhà cung cấp thay đổi cấu trúc giá, một ứng dụng có thể sẽ trở nên cực kỳ đắt đỏ nếu duy trì.</p><h3 id="c%C3%A1c-v%E1%BA%A5n-%C4%91%E1%BB%81-v%E1%BB%81-b%E1%BA%A3o-m%E1%BA%ADt">Các vấn đề về bảo mật</h3><p>Trong một kiến trúc của PaaS, nhà cung cấp sẽ lưu trữ phần lớn dữ liệu của ứng dụng, đồng thời là cả mã nguồn của ứng dụng đó. Chưa kể đến việc nhà cung cấp đó còn sử dụng dịch vụ lưu trữ cơ sở dữ liệu của một bên khác nữa. Mặc dù các nhà cung cấp PaaS là những công ty lớn với khả năng bảo mật dữ liệu tốt, nhưng cũng rất khó để có thể truy cập và tìm hiểu các thông tin về hệ thống bảo mật của họ. Ngoài ra, đối với các công ty có cơ chế bảo mật khắt khe, việc xác nhận thêm một nhà cung cấp nữa cho ứng dụng cũng sẽ gây khó khăn rất lớn trong quá trình tung ứng dụng ra thị trường.</p><h2 id="paas-kh%C3%A1c-v%E1%BB%9Bi-%C4%91i%E1%BB%87n-to%C3%A1n-kh%C3%B4ng-m%C3%A1y-ch%E1%BB%A7-nh%C6%B0-th%E1%BA%BF-n%C3%A0o">PaaS khác với điện toán không máy chủ như thế nào?</h2><p>PaaS và điện toán không máy chủ có khá nhiều điểm tương đồng, ví dụ như tất cả những gì mà các nhà phát triển phải lo là viết và đăng tải mã nguồn, còn lại thì nhà cung cấp dịch vụ sẽ lo phần phía sau. Tuy nhiên, việc mở rộng phát triển có khác nhau một chút giữa hai mô hình. Các ứng dụng được xây dựng bằng mô hình điện toán không máy chủ, hay còn gọi là FaaS, sẽ tự động mở rộng quy mô, trong khi các ứng dụng PaaS sẽ không tự động trừ khi được lập trình để làm thế. Thời gian khởi động cũng chênh lệch khá nhiều; các ứng dụng không máy chủ có thể khởi động và chạy gần như tức thì, nhưng các ứng dụng PaaS thì sẽ giống như các ứng dụng truyền thống, gần như phải chạy liên tục thì mới có thể đáp ứng được nhu cầu của người dùng.</p><p>Một điểm khác nhau nữa là các nhà cung cấp dịch vụ không máy chủ sẽ không cung cấp công cụ hay bộ khung nền tảng như bên PaaS. Và cuối cùng, chính sách giá là thứ phân biệt giữa hai mô hình. PaaS thu tiền không chính xác như điện toán không máy chủ, vì điện toán không máy chủ tính phí theo từng giây hoặc từng phần nhỏ của một giây mỗi khi có một chức năng bắt đầu chạy.</p>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="page-footer">
+            <amp-img class="site-icon" src="http://localhost:2368/content/images/2021/06/daBrucemusic-1.png" width="50" height="50" layout="fixed"></amp-img>
+        <h3>Onion Planet</h3>
+            <p>tlhIngan Hol Dajatlhʼaʼ?</p>
+        <p><a href="../../index.html">Read more posts →</a></p>
+        <a class="powered" href="https://ghost.org" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 156"><g fill="none" fill-rule="evenodd"><rect fill="#15212B" width="156" height="156" rx="27"/><g transform="translate(36 36)" fill="#F6F8FA"><path d="M0 71.007A4.004 4.004 0 014 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0130 84H4a4 4 0 01-4-4.007v-8.986zM50 71.007A4.004 4.004 0 0154 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0180 84H54a4 4 0 01-4-4.007v-8.986z"/><rect y="34" width="84" height="17" rx="4"/><path d="M0 4.007A4.007 4.007 0 014.007 0h41.986A4.003 4.003 0 0150 4.007v8.986A4.007 4.007 0 0145.993 17H4.007A4.003 4.003 0 010 12.993V4.007z"/><rect x="67" width="17" height="17" rx="4"/></g></g></svg> Published with Ghost</a>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#A98B69"/>
+
+        <title>Thế nào là Platform-as-a-Service (PaaS) | Onion Planet</title>
+        <meta name="description" content="tlhIngan Hol Dajatlhʼaʼ?">
+
+        <style>
+            .dark .background-pattern{background-image:url("../assets/images/dark-pattern.png@v=42853f2fe3")}.light .background-pattern{background-image:url("../assets/images/light-pattern.png@v=42853f2fe3")}.dark .post-presentation .author-image-fill{background-image:url("../assets/images/prof-icon-white.png@v=42853f2fe3")}.light .post-presentation .author-image-fill{background-image:url("../assets/images/prof-icon-dark.png@v=42853f2fe3")}.dark .logo-light,.light .logo-dark{display:inline-block}.dark .logo-dark,.light .logo-light{display:none}
+        </style>
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600|Oswald:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href="../assets/built/css/extra.css@v=42853f2fe3.css" rel="stylesheet" type="text/css">
+            <link href="../assets/built/css/extra-post.css@v=42853f2fe3.css" rel="stylesheet" type="text/css">
+
+        <link href="../assets/built/css/style.css@v=42853f2fe3.css" rel="stylesheet" type="text/css">
+
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+        <link rel="dns-prefetch" href="https://code.jquery.com">
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+        <script>
+            var switcherActive = false;
+            var themeColors = "brown dark";
+        </script>
+
+        <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Onion Planet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Thế nào là Platform-as-a-Service (PaaS)" />
+    <meta property="og:description" content="Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt." />
+    <meta property="og:url" content="http://localhost:2368/the-nao-la-platform-as-a-service-paas/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta property="article:published_time" content="2019-10-20T14:47:00.000Z" />
+    <meta property="article:modified_time" content="2021-07-31T08:28:30.000Z" />
+    <meta property="article:tag" content="Thiết kế" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/minhducdoo" />
+    <meta property="article:author" content="https://www.facebook.com/minhducdoo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Thế nào là Platform-as-a-Service (PaaS)" />
+    <meta name="twitter:description" content="Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt." />
+    <meta name="twitter:url" content="http://localhost:2368/the-nao-la-platform-as-a-service-paas/" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Minh-Duc" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Thiết kế" />
+    <meta name="twitter:site" content="@minhducdoo" />
+    <meta name="twitter:creator" content="@minhducdoo" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Onion Planet",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/07/ONION-PLANET-2.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Minh-Duc",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/b1708cec5e585d39f3b31bcb6ebd1faa?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "http://localhost:2368/author/duc/",
+        "sameAs": [
+            "https://www.facebook.com/minhducdoo",
+            "https://twitter.com/minhducdoo"
+        ]
+    },
+    "headline": "Thế nào là Platform-as-a-Service (PaaS)",
+    "url": "http://localhost:2368/the-nao-la-platform-as-a-service-paas/",
+    "datePublished": "2019-10-20T14:47:00.000Z",
+    "dateModified": "2021-07-31T08:28:30.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&ixlib=rb-1.2.1&q=80&w=2000",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "Thiết kế",
+    "description": "Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+<style>:root {--ghost-accent-color: #fccf0f;}</style>
+    <meta name="generator" content="Ghost 4.8" />
+    <link rel="alternate" type="application/rss+xml" title="Onion Planet" href="../rss/index.html" />
+
+    </head>
+
+    <body class="post-template tag-design">
+
+        <!-- MAIN NAVBAR -->
+<div id="main-navbar" class="sticky-ok">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+                <a class="navbar-brand" href="../index.html">
+    			<!-- DUAL LOGO SWITCHER
+    			<img alt="Onion Planet" class="img-fluid lazy logo-dark" src="/assets/images/logo-dark.png?v=42853f2fe3" />
+    			<img alt="Onion Planet" class="img-fluid lazy logo-light" src="/assets/images/logo-light.png?v=42853f2fe3" />
+    			-->
+    			<!-- SINGLE LOGO -->
+    			<img alt="Onion Planet" class="img-fluid lazy" src="../content/images/2021/07/ONION-PLANET-2.png" />
+    		</a>
+            <div class="mobile-navbar-buttons">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <button class="search-panel-toggle d-lg-none btn-control navbar-toggler" type="button"><i class="fa fa-search"></i></button>
+                <!-- <div class="dropdown dropdown-form subscribe subscribe-form">
+    <a href="#" class="nav-link change-theme-color dropdown-toggle navbar-toggler d-lg-none btn-control" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="alternate"><i class="fa fa-user"></i></a>
+    <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdownMenuButton">
+        <div class="info-wrapper">
+                <form data-members-form="signin">
+                    <span>Login / Subscribe</span>
+                    <div class="form-wrapper">
+                        <input class="subscribe-email input_class" data-members-email="" placeholder="youremail@example.com" autocomplete="false">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <span class="success-text">Check your inbox and click the link to confirm your subscription.</span>
+                    <span class="error-text">Please enter a valid email address.</span>
+                    <div class="button-wrapper">
+                        <button type="submit" class="button primary btn btn-no-background">Gửi luôn</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+ -->
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="main-navbar-content">
+                <ul class="navbar-nav">
+                            <li class="nav-item">
+            <a class="nav-link" href="../index.html">Về tàu mẹ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../about/index.html">Hành Tinh?</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../tags/index.html">Chuyên mục</a>
+        </li>
+
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="btn-control nav-link search-panel-toggle"><i class="fa fa-search"></i></a>
+                    </li>
+                    <!-- <li class="nav-item d-none d-lg-block">
+                        <div class="dropdown dropdown-form subscribe subscribe-form">
+    <a href="#" class="nav-link change-theme-color dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="alternate"><i class="fa fa-user"></i></a>
+    <div class="dropdown-menu animated fadeIn" aria-labelledby="dropdownMenuButton">
+        <div class="info-wrapper">
+                <form data-members-form="signin">
+                    <span>Login / Subscribe</span>
+                    <div class="form-wrapper">
+                        <input class="subscribe-email input_class" data-members-email="" placeholder="youremail@example.com" autocomplete="false">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <span class="success-text">Check your inbox and click the link to confirm your subscription.</span>
+                    <span class="error-text">Please enter a valid email address.</span>
+                    <div class="button-wrapper">
+                        <button type="submit" class="button primary btn btn-no-background">Gửi luôn</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+        
+
+
+    <!-- POST INFO WRAPPER -->
+    <div class="post-info-wrapper post-presentation active background lazy" data-src="https://images.unsplash.com/photo-1504904126298-3fde501c9b31?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDIwfHxzeXN0ZW18ZW58MHx8fHwxNjI0NTQ2MTEx&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000">
+        <div class="gradient gradient1">
+            <div class="container d-flex align-items-center">
+                <div class="row">
+                    <div class="col-sm-12 col-md col-lg col-xs-12">
+                        <span class="animated fadeInDown badge post-visibility post-public">public</span>
+                        <h1 class="animated fadeInUp">Thế nào là Platform-as-a-Service (PaaS)</h1>
+                        <div class="post-tags animated fadeIn">
+                                <a href="../tag/design/index.html">Thiết kế</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md col-lg col-xs-12 spacing-public">
+                        <p class="animated fadeInDown d-none d-sm-block">Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AUTHOR INFO -->
+            <div class="post-presentation author-wrapper container">
+                <div class="d-flex justify-content-between align-items-center author-info">
+                    <div class="multiple-authors animated fadeIn">
+                                <a href="../author/duc/index.html" class="vertical-align author-info">
+                                    <div class="lazy author-image background " data-src="//www.gravatar.com/avatar/b1708cec5e585d39f3b31bcb6ebd1faa?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x"></div>Minh-Duc
+                                </a>
+                    </div>
+                    <p class="animated fadeIn"><i class="far fa-clock"></i>2 năm trước</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="latest-post">
+            <div class="container d-md-flex align-items-center">
+                <span class="badge badge-primary">Mới nhất</span>
+                <a href="../quan-ly-san-pham-b2b-va-b2c/index.html" class="d-md-inline-flex d-block">Quản lý sản phẩm B2B và B2C khác nhau như thế nào <span>- Minh-Duc</span></a>
+                <span class="badge post-visibility post-public">public</span>
+            </div>
+        </div>
+
+    <div id="main" class="container">
+            <article>
+    <h2 id="v%E1%BB%81-platform-as-a-service-paas">Về Platform-as-a-Service (PaaS)</h2><p>Trong mô hình PaaS, các nhà phát triển sẽ thuê tất cả những gì họ cần để xây dựng sản phẩm, dựa vào công nghệ đám mây để phát triển các công cụ, cơ sở hạ tầng và hệ điều hành. PaaS là 1 trong 3 hình thức của điện toán đám mây. PaaS đơn giản hóa việc phát triển ứng dụng trên nền web; từ góc nhìn của một nhà phát triển phần mềm, tất cả những tác vụ quản lý dữ liệu (back-end) đều diễn ra phía sau bức màn sân khấu. Dù PaaS có đôi chỗ giống với điện toán không máy chủ (serverless computing), thì giữa chúng vẫn còn rất nhiều sự khác biệt.</p><h2 id="ba-m%C3%B4-h%C3%ACnh-d%E1%BB%8Bch-v%E1%BB%A5-c%E1%BB%A7a-%C4%91i%E1%BB%87n-to%C3%A1n-%C4%91%C3%A1m-m%C3%A2y">Ba mô hình dịch vụ của điện toán đám mây</h2><figure class="kg-card kg-image-card"><img src="https://lh4.googleusercontent.com/TGB7d9UnSwREKk-r3y1OzlzPL5DVgNqQK6f4eo2mpIz-GvM5M1_FQUQKfKrHJ3ZdtVbWBwyhwKZAlnDo06hBy1tlCAjwJ1DRH0sVRy-nJQ_XoSNw0lqP54lMwEObuGVZQl-BCZw" class="kg-image" alt loading="lazy"></figure><p>Có 3 mô hình dịch vụ của điện toán đám mây, gồm PaaS, SaaS (Software-as-a-Service) và IaaS (Infrastructure-as-a-Service). IaaS có liên quan đến cơ sở hạ tầng của công nghệ điện toán đám mây - máy chủ, bộ nhớ, … - được quản lý bởi nhà cung cấp dịch vụ đám mây. Trong khi đó SaaS liên quan đến tất cả các ứng dụng chạy trên nền tảng đám mây, dưới sự quản lý của các công ty cung cấp dịch vụ. Nếu người dùng SaaS giống như một người đi thuê nhà, thì người dùng PaaS giống một người đi thuê tất cả các công cụ và thiết bị hạng nặng để nhanh chóng xây một ngôi nhà, và các công cụ đó được bảo trì và sửa chữa liên tục bởi chủ sở hữu.</p><h2 id="so-s%C3%A1nh-paas-v%E1%BB%9Bi-n%E1%BB%81n-t%E1%BA%A3ng-ph%C3%A1t-tri%E1%BB%83n-%C4%91%C6%B0%E1%BB%A3c-l%C6%B0u-tr%E1%BB%AF-n%E1%BB%99i-b%E1%BB%99">So sánh PaaS với nền tảng phát triển được lưu trữ nội bộ</h2><p>PaaS có thể truy cập từ bất cứ nơi nào có internet, tạo điều kiện dễ dàng cho việc xây dựng ứng dụng từ trình duyệt web. Vì môi trường phát triển ứng dụng không lưu trữ cục bộ, nên các nhà phát triển có thể tương tác với ứng dụng từ bất cứ đâu trên thế giới. Điều này cho phép các nhóm phát triển đa quốc gia có thể cùng hợp tác làm việc. Điều này cũng có nghĩa là các nhà phát triển sẽ có ít quyền kiểm soát môi trường thiết kế sản phẩm hơn.</p><h2 id="c%C3%B3-g%C3%AC-trong-paas">Có gì trong PaaS?</h2><p>Các tính năng chính của PaaS thường bao gồm:</p><ul><li>Các công cụ phát triển</li><li>Các phần mềm trung gian</li><li>Hệ điều hành</li><li>Quản lý cơ sở dữ liệu</li><li>Cơ sở hạ tầng</li></ul><p>Các công ty khác nhau có thể cung cấp các dịch vụ khác nhau, nhưng các thành phần trên là những dịch vụ chủ yêu của PaaS.</p><h3 id="c%C3%A1c-c%C3%B4ng-c%E1%BB%A5-ph%C3%A1t-tri%E1%BB%83n">Các công cụ phát triển</h3><p>Các công ty phát triển PaaS sẽ cung cấp các công cụ cần thiết để phát triển phần mềm, bao gồm trình biên soạn mã nguồn, trình kiểm duyệt lỗi, trình biên soạn mã và một vài công cụ thiết yếu khác. Các công cụ này có thể đi kèm với nhau như một bộ khung nền tảng. Các công cụ chuyên biệt thì sẽ tùy thuộc vào từng công ty, nhưng thường thì sẽ bao gồm đầy đủ những thứ cần thiết để xây dựng phần mềm.</p><h3 id="c%C3%A1c-ph%E1%BA%A7n-m%E1%BB%81m-trung-gian">Các phần mềm trung gian</h3><p>Các nền tảng được sử dụng như một loại dịch vụ thì thường sẽ đi kèm với nhiều phần mềm trung gian, với mục đích giúp các nhà phát triển không phải thiết kế lại từ đầu. Phần mềm trung gian là loại phần mềm đứng giữa ứng dụng dành cho người dùng cuối và hệ điều hành của máy móc; ví dụ một phần mềm trung gian sẽ cho phép các phần mềm khác truy cập thông tin từ bàn phím và chuột. Phần mềm trung gian rất cần thiết trong việc phát triển ứng dụng, nhưng người dùng cuối lại không hề tương tác với chúng.</p><h3 id="h%E1%BB%87-%C4%91i%E1%BB%81u-h%C3%A0nh">Hệ điều hành</h3><p>Một công ty phát triển PaaS sẽ cung cấp và duy trì một hệ điều hành mà các nhà phát triển có thể làm việc và chạy ứng dụng của mình trên đó.</p><h3 id="c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u">Cơ sở dữ liệu</h3><p>Các nhà cung cấp PaaS sẽ đóng vai trò quản trị và duy trì cơ sở dữ liệu. Thường thì họ cũng sẽ cung cấp cho các nhà phát triển một hệ thống quản lý cơ sở dữ liệu.</p><h2 id="c%C6%A1-s%E1%BB%9F-h%E1%BA%A1-t%E1%BA%A7ng">Cơ sở hạ tầng</h2><figure class="kg-card kg-image-card"><img src="https://lh4.googleusercontent.com/8g374KaWjz70En5sul0OydKUKCGUglI9Pal1qkuNTFvVwdLRDsT_0AFPWQRsMng1Vs5weVd08Y5ERdVHcOQnLZs3ni54J_cxoL8asp_ioahsHXMbueULpRqZjvSspb9I-W-Rjvk" class="kg-image" alt loading="lazy"></figure><p><br>PaaS là lớp trên của IaaS trong mô hình các dịch vụ điện toán đám mây, và mọi thứ trong IaaS đều nằm trong PaaS. Một nhà cung cấp PaaS vừa có thể quản lý máy chủ, bộ nhớ, và các trung tâm dữ liệu vật lý, hoặc cũng có thể thuê từ các nhà cung cấp IaaS.</p><h2 id="t%E1%BA%A1i-sao-c%C3%A1c-nh%C3%A0-ph%C3%A1t-tri%E1%BB%83n-s%E1%BB%AD-d%E1%BB%A5ng-paas">Tại sao các nhà phát triển sử dụng PaaS?</h2><h3 id="th%E1%BB%9Di-gian-ti%E1%BA%BFp-c%E1%BA%ADn-th%E1%BB%8B-tr%C6%B0%E1%BB%9Dng-nhanh-h%C6%A1n">Thời gian tiếp cận thị trường nhanh hơn</h3><p>PaaS được sử dụng để xây dựng ứng dụng nhanh hơn. Các nhà phát triển không phải lo về việc xây dựng, cấu hình hay tự cung cấp cơ sở hạ tầng cho ứng dụng của mình. Với PaaS, tất cả những gì họ phải làm là viết code và kiểm thử ứng dụng, những việc còn lại để nhà cung cấp PaaS lo.</p><h3 id="m%E1%BB%99t-m%C3%B4i-tr%C6%B0%E1%BB%9Dng-t%E1%BB%AB-%C4%91%E1%BA%A7u-%C4%91%E1%BA%BFn-cu%E1%BB%91i">Một môi trường từ đầu đến cuối</h3><p>PaaS cho phép các nhà phát triển xây dựng, kiểm thử, sửa lỗi, lưu trữ và cập nhật ứng dụng của mình trên cùng một môi trường. Điều này cho phép các nhà phát triển chắc chắn rằng ứng dụng web của mình sẽ hoạt động trơn tru trước khi ra mắt, và nó cũng đơn giản hóa quá trình nâng cấp của ứng dụng.</p><h3 id="gi%C3%A1-c%E1%BA%A3">Giá cả</h3><p>Giá cả của PaaS nếu tính ra sẽ rẻ hơn và hiệu quả hơn so với IaaS trong nhiều trường hợp. Tổng chi phí sẽ được giảm thiểu vì khách hàng dùng PaaS không phải quản lý máy chủ ảo. Thêm nữa, một số nhà cung cấp PaaS có chính sách dùng đến đâu trả đến đó (pay-as-you-go), khi đó công ty chỉ tính tiền cho nguồn lực của máy tính mà ứng dụng đó tiêu hao, và thường thì sẽ tiết kiệm khá nhiều tiền cho nhà phát triển. Tuy nhiên, mỗi công ty có cấu trúc giá khác nhau, và một số nhà cung cấp nền tảng cũng vẫn thu phí cứng hàng tháng.</p><h3 id="v%E1%BA%A5n-%C4%91%E1%BB%81-b%E1%BA%A3n-quy%E1%BB%81n">Vấn đề bản quyền</h3><p>Các nhà cung cấp PaaS sẽ lo toàn bộ phần đăng ký bản quyền cho hệ điều hành, các công cụ phát triển và bất cứ thành phần nào khác trên nền tảng của họ.</p><h2 id="nh%E1%BB%AFng-h%E1%BA%A1n-ch%E1%BA%BF-ti%E1%BB%81m-t%C3%A0ng-khi-s%E1%BB%AD-d%E1%BB%A5ng-paas">Những hạn chế tiềm tàng khi sử dụng PaaS</h2><h3 id="g%E1%BA%AFn-b%C3%B3-v%E1%BB%9Bi-nh%C3%A0-cung-c%E1%BA%A5p">Gắn bó với nhà cung cấp</h3><p>Sẽ rất khó nếu muốn chuyển đổi nhà cung cấp dịch vụ PaaS, vì cả ứng dụng đã được xây dựng và phát triển bằng công cụ của họ và tích hợp với nền tảng của họ. Mỗi nhà cung cấp có những yêu cầu kiến trúc khác nhau, sử dụng ngôn ngữ lập trình khác nhau, cũng như các thư viện, API và hệ điều hành để phát triển ứng dụng khác nhau. Để chuyển đổi nhà cung cấp, các nhà phát triển cần xây dựng lại hoặc thay đổi hướng vận hành của ứng dụng.</p><h3 id="s%E1%BB%B1-ph%E1%BB%A5-thu%E1%BB%99c-v%C3%A0o-nh%C3%A0-cung-c%E1%BA%A5p">Sự phụ thuộc vào nhà cung cấp</h3><p>Công sức và nguồn lực cần thiết để chuyển đổi nhà cung cấp PaaS có thể sẽ gây phụ thuộc ngày càng nhiều hơn. Một thay đổi nhỏ trong quy trình nội bộ của nhà cung cấp hoặc sự thay đổi trong cơ sở hạ tầng cũng có thể gây nên những tác động rất lớn đến hiệu năng của ứng dụng vì nó được xây để đáp ứng với cấu hình cũ. Thêm vào đó, nếu nhà cung cấp thay đổi cấu trúc giá, một ứng dụng có thể sẽ trở nên cực kỳ đắt đỏ nếu duy trì.</p><h3 id="c%C3%A1c-v%E1%BA%A5n-%C4%91%E1%BB%81-v%E1%BB%81-b%E1%BA%A3o-m%E1%BA%ADt">Các vấn đề về bảo mật</h3><p>Trong một kiến trúc của PaaS, nhà cung cấp sẽ lưu trữ phần lớn dữ liệu của ứng dụng, đồng thời là cả mã nguồn của ứng dụng đó. Chưa kể đến việc nhà cung cấp đó còn sử dụng dịch vụ lưu trữ cơ sở dữ liệu của một bên khác nữa. Mặc dù các nhà cung cấp PaaS là những công ty lớn với khả năng bảo mật dữ liệu tốt, nhưng cũng rất khó để có thể truy cập và tìm hiểu các thông tin về hệ thống bảo mật của họ. Ngoài ra, đối với các công ty có cơ chế bảo mật khắt khe, việc xác nhận thêm một nhà cung cấp nữa cho ứng dụng cũng sẽ gây khó khăn rất lớn trong quá trình tung ứng dụng ra thị trường.</p><h2 id="paas-kh%C3%A1c-v%E1%BB%9Bi-%C4%91i%E1%BB%87n-to%C3%A1n-kh%C3%B4ng-m%C3%A1y-ch%E1%BB%A7-nh%C6%B0-th%E1%BA%BF-n%C3%A0o">PaaS khác với điện toán không máy chủ như thế nào?</h2><p>PaaS và điện toán không máy chủ có khá nhiều điểm tương đồng, ví dụ như tất cả những gì mà các nhà phát triển phải lo là viết và đăng tải mã nguồn, còn lại thì nhà cung cấp dịch vụ sẽ lo phần phía sau. Tuy nhiên, việc mở rộng phát triển có khác nhau một chút giữa hai mô hình. Các ứng dụng được xây dựng bằng mô hình điện toán không máy chủ, hay còn gọi là FaaS, sẽ tự động mở rộng quy mô, trong khi các ứng dụng PaaS sẽ không tự động trừ khi được lập trình để làm thế. Thời gian khởi động cũng chênh lệch khá nhiều; các ứng dụng không máy chủ có thể khởi động và chạy gần như tức thì, nhưng các ứng dụng PaaS thì sẽ giống như các ứng dụng truyền thống, gần như phải chạy liên tục thì mới có thể đáp ứng được nhu cầu của người dùng.</p><p>Một điểm khác nhau nữa là các nhà cung cấp dịch vụ không máy chủ sẽ không cung cấp công cụ hay bộ khung nền tảng như bên PaaS. Và cuối cùng, chính sách giá là thứ phân biệt giữa hai mô hình. PaaS thu tiền không chính xác như điện toán không máy chủ, vì điện toán không máy chủ tính phí theo từng giây hoặc từng phần nhỏ của một giây mỗi khi có một chức năng bắt đầu chạy.</p>
+</article>
+
+<div class="article-bottom-info d-flex justify-content-between align-items-center post-presentation">
+            <a href="../author/duc/index.html" class="vertical-align author-info d-none d-sm-inline-flex">
+                <div class="author-image background lazy " data-src="//www.gravatar.com/avatar/b1708cec5e585d39f3b31bcb6ebd1faa?s&#x3D;250&amp;d&#x3D;mm&amp;r&#x3D;x"></div>Minh-Duc
+            </a>
+    <p class="d-block d-sm-none"><i class="fa fa-clock-o"></i> Published 2 năm trước</p>
+    <div class="share-icons icons-visible">
+        <div class="icon-container">
+            <div class="icons">
+                <span>Chia sẻ bài viết này trên:</span>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/the-nao-la-platform-as-a-service-paas/" onclick="window.open(this.href, 'facebook-share','width=580, height=300');return false;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/share?text=Th%E1%BA%BF%20n%C3%A0o%20l%C3%A0%20Platform-as-a-Service%20(PaaS)&amp;url=http://localhost:2368/the-nao-la-platform-as-a-service-paas/" onclick="window.open(this.href, 'twitter-share', 'width=580, height=300');return false;"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="next-prev-post-wrapper">
+    <div class="row">
+            <div class="col-xs col-sm col-md col-lg">
+                <div class="post post-prev post-presentation background lazy" data-src="https://images.unsplash.com/photo-1527474305487-b87b222841cc?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fGRhdGF8ZW58MHx8fHwxNjI0NTQ2ODY3&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000">
+                    <div class="gradient gradient2 d-flex align-items-center">
+                        <div class="post-info">
+                            <span><i class="fa fa-chevron-left"></i> Bài viết trước</span>
+                            <h3><a href="../su-khac-biet-giua-du-lieu-co-cau-truc-ban-cau-truc-va-khong-cau-truc/index.html">Sự khác biệt giữa Dữ liệu Có cấu trúc, Bán cấu trúc và Không cấu trúc</a></h3>
+                            <div class="post-tags"><a href="../tag/design/index.html">Thiết kế</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md col-lg">
+                <div class="post post-next post-presentation background lazy" data-src="https://images.unsplash.com/photo-1454486837617-ce8e1ba5ebfe?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDEzMHx8bGlmZXxlbnwwfHx8fDE2MjQ1NDY1MjA&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000">
+                    <div class="gradient gradient2 d-flex align-items-center">
+                        <div class="post-info">
+                            <span>Bài viết mới <i class="fa fa-chevron-right"></i></span>
+                            <h3><a href="../dung-song-dua-vao-dong-luong/index.html">Đừng sống dựa vào đồng lương</a></h3>
+                            <div class="post-tags"><a href="../tag/life/index.html">Cột sống</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+    </div>
+
+
+
+
+
+
+        <div id="search-section">
+    <form class="container">
+        <input autocomplete="off" ype="text" class="form form-control" id="search-field" placeholder="Tìm kiếm bài viết theo từ khóa...">
+        <input type="submit" value="search" class="d-none">
+        <div id="results"></div>
+    </form>
+    <i class="search-panel-toggle fa fa-close fas fa-times"></i>
+    <i class="fas fa-spinner"></i>
+</div>
+
+        <footer id="rights" class="lazy background-pattern"
+>
+    <div class="gradient gradient2">
+        <div class="container d-md-flex align-items justify-content-between">
+            <p>Onion Planet &copy; 2021.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/minhducdoo" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/minhducdoo" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                <!-- <a href="http://localhost:2368/rss/" taget="_blank" rel="noopener"><i class="fa fa-rss"></i></a> -->
+            </div>
+        </div>
+        	<div class="container d-flex align-items" id="terms">
+		<ul>
+			        <li class="nav-item">
+            <a class="nav-link" href="../privacy/index.html">Điều khoản bảo mật</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../contact/index.html">Liên hệ</a>
+        </li>
+
+		</ul>
+	</div>
+    </div>
+</footer>
+
+
+        <script>
+            var ghosthunter_key = "5966a676d3cd5ffcfbe697e735";
+            var maxPages = parseInt('');
+            var endMessage = 'Hết mất rồi';
+            var loadingMessage = 'Đang tải...';
+            var Message = 'Xem thêm';
+        </script>
+
+        <script src="../assets/built/js/extra.js@v=42853f2fe3"></script>
+            <script src="../assets/built/js/extra-post.js@v=42853f2fe3"></script>
+    <script>
+        $(document).ready(function() {
+            $("article").fitVids();
+            $( "table" ).wrap("<div class='table-responsive'></div>");
+            $(".kg-gallery-image > img").wrap("<a data-gallery='collection-gallery' data-toggle='lightbox' class='lb-item' href='index.html'></a>");
+            $(".lb-item").each(function(e, t) {
+               $(this).attr("href", $(this).children("img").attr("src"))
+            });
+            $(document).on("click", '[data-toggle="lightbox"]', function(e) {
+               e.preventDefault(), $(this).ekkoLightbox()
+            });
+            document.querySelectorAll(".kg-gallery-image img").forEach(function(e) {
+               var t = e.closest(".kg-gallery-image"),
+                   a = e.attributes.width.value / e.attributes.height.value;
+               t.style.flex = a + " 1 0%"
+            })
+       });
+   </script>
+
+        <script src="../assets/built/js/main.js@v=42853f2fe3"></script>
+
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=551350469572702&autoLogAppEvents=1" nonce="JzUb1LsX"></script>
+
+    </body>
+
+</html>
